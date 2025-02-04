@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace BankLibrary
 {
-    internal class SavingsAccount
+    public class SavingsAccount : Account
     {
+        public decimal InterestRate { get; private set; }
+        public SavingsAccount(string accountNumber, string accountName, decimal initialBalance, decimal interestRate) :
+            base(accountNumber, accountHolder, intialBalance)
+        {
+            InterestRate = interestRate;
+        }
+        public void ApplyInterest()
+        {
+            decimal interestPayment = Balance * InterestRate;
+            this.Deposit(interestPayment);
+        }
     }
 }
