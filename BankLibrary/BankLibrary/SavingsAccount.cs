@@ -10,7 +10,7 @@ namespace BankLibrary
     {
         public decimal InterestRate { get; private set; }
         public SavingsAccount(string accountNumber, string accountName, decimal initialBalance, decimal interestRate) :
-            base(accountNumber, accountHolder, intialBalance)
+            base(accountNumber, accountHolder, initialBalance)
         {
             InterestRate = interestRate;
         }

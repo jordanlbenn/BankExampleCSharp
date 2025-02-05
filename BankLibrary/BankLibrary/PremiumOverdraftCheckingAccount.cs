@@ -16,7 +16,7 @@ namespace BankLibrary
         }
         public void ApplyCashback(decimal purchaseAmount)
         {
-            if (purchaseAmount <= 0) throw neq ArguementException("Purchase amount must be greater than 0");
+            if (purchaseAmount <= 0) throw new ArgumentException("Purchase amount must be greater than 0");
             var cashback = purchaseAmount * CashbackRate;
             this.Deposit(cashback);
         }

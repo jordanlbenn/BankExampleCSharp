@@ -15,10 +15,10 @@ namespace BankLibrary
             OverdraftLimit = overDraftLimit;
         }
         public override void Withdraw(decimal amount)
-        (
-            if (amount <= 0) throw new ArguementException("Withdraw amount must be positive");
+        {
+            if (amount <= 0) throw new ArgumentException("Withdraw amount must be positive");
             if (amount > Balance + OverdraftLimit) throw new InvalidOperationException("Overdraft limit exceeded");
             this.Withdraw(amount);
-        )
+        }
     }
 }
